@@ -2,3 +2,99 @@
   padding: 0;
   margin: 0;
 }
+
+
+
+.nav{
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  background: black;
+
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+  }
+
+  li a:hover{
+    border-bottom: 5px white solid;
+  }
+}
+
+section{
+  border: red solid 1px;
+}
+
+.hero{
+  background-image: url("../assets/Images/hero-bio.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  width: 100%;
+
+  h1{
+    color: white;
+  }
+}
+
+.gallary{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  h1{
+
+    width: 100%;
+    margin: 20px;
+  }
+
+  &__item{
+    width: 30%;
+
+    img{
+      width: 100%;
+    }
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-media {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .footer__contact {
+    display: flex;
+    justify-content: space-between;
+
+    &-address {
+      flex: 1;
+    }
+  }
+
+  &__right {
+    text-align: center;
+  }
+}
