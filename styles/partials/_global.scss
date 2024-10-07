@@ -173,6 +173,51 @@ footer{
   }
 }
 
+.footer__container {
+  display: table;
+  width: 100%;
+
+  &--left {
+    display: table-cell;
+    width: 75%;
+  }
+
+  &--right {
+    display: table-cell;
+    width: 25%;
+    vertical-align: top;
+    text-align: right;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+
+    tr {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    &--bandsite{
+      text-align: left;
+    }
+  }
+
+}
+
+
+
 .footer{
   &__contact{
     display: flex;

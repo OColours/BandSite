@@ -220,6 +220,43 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
   text-decoration: none;
 }
 
+.footer__container {
+  display: table;
+  width: 100%;
+}
+.footer__container--left {
+  display: table-cell;
+  width: 75%;
+}
+.footer__container--right {
+  display: table-cell;
+  width: 25%;
+  vertical-align: top;
+  text-align: right;
+}
+.footer__container table {
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__container tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer__container td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .footer__container--bandsite {
+    text-align: left;
+  }
+}
+
 .footer__contact {
   display: flex;
   flex-wrap: wrap;
