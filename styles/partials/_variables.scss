@@ -1,0 +1,131 @@
+@use "typography";
+
+// Type Kit
+$font-weights: (
+        "regular": 400,
+        "demi": 600,
+        "bold": 700
+);
+
+$base-rem: 1rem;
+
+$font-styles: (
+        "font-family": (
+                "default": 'Avenir',
+        ),
+        "font-weight": (
+                "default": (
+                        "pg-header": map-get($font-weights, "bold"),
+                        "sec-header": map-get($font-weights, "bold"),
+                        "subheader": map-get($font-weights, "demi"),
+                        "body": map-get($font-weights, "regular"),
+                        "footer": map-get($font-weights, "regular"),
+                        "labels": map-get($font-weights, "bold"),
+                        "buttons": map-get($font-weights, "bold")
+                )
+        ),
+        "font-size": (
+                "default": (
+                        "pg-header": 60px,
+                        "sec-header": 36px,
+                        "subheader": 24px,
+                        "body": 14px,
+                        "footer": 14px,
+                        "labels": 12px,
+                        "buttons": 12px
+                ),
+                "mobile": (
+                        "pg-header": 24px,
+                        "sec-header": 24px,
+                        "subheader": 14px,
+                        "body": 13px,
+                        "footer": 13px,
+                        "labels": 10px,
+                        "buttons": 10px
+                )
+        ),
+        "line-height": (
+                "default": (
+                        "pg-header": 68px,
+                        "sec-header": 44px,
+                        "subheader": 32px,
+                        "body": 22px,
+                        "footer": 20px,
+                        "labels": 20px,
+                        "buttons": 20px
+                ),
+                "mobile": (
+                        "pg-header": 32px,
+                        "sec-header": 32px,
+                        "subheader": 22px,
+                        "body": 18px,
+                        "footer": 18px,
+                        "labels": 20px,
+                        "buttons": 20px
+                )
+        )
+);
+
+// Color
+$primary: #323232;
+$secondary: #AFAFAF;
+
+$colors: (
+        // PRIMARY COLORS
+        'bandsite-black':  $primary,
+        'silver': $secondary,
+        'white': #FFFFFF,
+
+        // SECONDARY COLORS
+        'BandSite-darkblack': #000000,
+        'mercury': #E1E1E1,
+        'alabaster': #FAFAFA
+);
+
+// Layout Grid
+
+$breakpoints: (
+        desktop: 1280px,
+        tablet: 768px,
+        mobile: 767px
+);
+
+$grids: (
+        "columns":(
+                "desktop": 12,
+                "tablet": 12,
+                "mobile": 6,
+        ),
+        "gutters":(
+                "desktop":$base-rem * 1.5,
+                "tablet":$base-rem * 1.5,
+                "mobile":$base-rem * 1,
+        ),
+        "margins":(
+                "desktop":auto,
+                "tablet":$base-rem * 2.25,
+                "mobile":$base-rem * 1.625,
+        )
+);
+
+// Padding
+$padding: (
+        'default': (
+                'pt-head': $base-rem * 3,
+                'pb-head': $base-rem * 2.25,
+                'p-comp': $base-rem * 2.25
+        ),
+        'mobile': (
+                'pt-head': $base-rem * 1.5,
+                'pb-head': $base-rem * 1,
+                'p-comp': $base-rem * 1
+        )
+);
+
+// Divider
+/*
+$divider: (
+        'stroke-width': 1px,
+        'fill-color': map-get($colors, 'mercury')
+);
+*/

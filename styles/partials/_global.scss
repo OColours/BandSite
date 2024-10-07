@@ -1,0 +1,275 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+//Others
+.about {
+  &__band {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--quote {
+      width: 80%;
+      text-align: start;
+    }
+
+    &--cite {
+      @include font-styles("subheader", "default");
+      font-size: 18px;
+      @include mobile{
+        font-size: 14px;
+      }
+    }
+
+    &--article {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &--article h2 {
+      width: 100%;
+      text-align: left;
+    }
+
+    &--article p {
+      width: 40%;
+    }
+  }
+
+  &__band img {
+    width: 80%;
+    height: auto;
+  }
+
+  @include mobile{
+    &__band--article {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__band--article p {
+      width: 100%;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      flex: 1;
+      padding: 1rem;
+      border-bottom: 5px solid $primary;
+      box-sizing: border-box;
+      text-align: center;
+
+      &:hover {
+        color: map-get($colors,'Alabaster');
+        border-bottom: 5px solid map-get($colors,'mercury');
+        a{
+          color: map-get($colors,'alabaster');
+
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $secondary;
+      }
+    }
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 1rem;
+
+    ul{
+      width: 100%;
+      text-align: center;
+      padding: 0;
+    }
+  }
+}
+
+.hero{
+  @include background-opacity("../assets/Images/hero-bio.jpg",0.5);
+  align-items: center;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__title h1{
+    @include font-styles("sec-header", "default");
+    font-size:60px;
+    font-weight: 600;
+
+    @include mobile{
+      font-size: 24px;
+    }
+  }
+}
+
+.container{
+  box-sizing: border-box;
+
+  @include comp-padding("default");
+
+  @include mobile {
+    @include comp-padding("mobile");
+  }
+}
+
+.row{
+  padding-bottom: $base-rem * 2.25;
+
+  @include mobile {
+    padding-bottom: $base-rem * 1;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  @include layout-grid(desktop);
+
+  @include tablet {
+    @include layout-grid(tablet);
+  }
+
+  @include mobile {
+    @include layout-grid(mobile);
+    grid-template-columns: 1fr;
+  }
+}
+
+footer{
+  overflow: hidden;
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+}
+
+.footer{
+  &__contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mobile{
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__bandsite{
+    text-align: left;
+    @include mobile{
+      text-align: left;
+      order: 1;
+    }
+  }
+
+  &__social img{
+    margin-right: 1rem;
+    @include mobile{
+      text-align: left;
+      order: 1;
+    }
+  }
+}
+
+//Color
+.bg-dark{
+  color: map-get($colors, 'white');
+}
+
+.bg-light{
+  color: $primary;
+}
+
+header, footer{
+  background:$primary;
+}
+
+//Type Kit
+.page-header {
+  @include font-styles("pg-header", "default");
+
+  @include mobile {
+    @include font-styles("pg-header", "mobile");
+  }
+}
+
+.section-header {
+  @include font-styles("sec-header", "default");
+  @include header-padding("default");
+
+  @include mobile {
+    @include font-styles("sec-header", "mobile");
+    @include header-padding("mobile");
+  }
+}
+
+.subheader {
+  @include font-styles("subheader", "default");
+
+  @include mobile {
+    @include font-styles("subheader", "mobile");
+  }
+}
+
+.body {
+  @include font-styles("body", "default");
+
+  @include mobile {
+    @include font-styles("body", "mobile");
+  }
+}
+
+.footer {
+  @include font-styles("footer", "default");
+
+  @include mobile {
+    @include font-styles("footer", "mobile");
+  }
+}
+
+.labels {
+  @include font-styles("labels", "default");
+
+  @include mobile {
+    @include font-styles("labels", "mobile");
+  }
+}
+
+.buttons {
+  @include font-styles("buttons", "default");
+
+  @include mobile {
+    @include font-styles("buttons", "mobile");
+  }
+}
