@@ -1,10 +1,6 @@
 @use "mixins" as *;
 @use "variables" as *;
 
-//variable
-
-$assetsPath :"../assets/Images";
-
 //Others
 .about {
   &__band {
@@ -109,7 +105,7 @@ $assetsPath :"../assets/Images";
 }
 
 .hero{
-  @include background-opacity("#{$assetsPath}/hero-bio.jpg", 0.5);
+  @include background-opacity("#{$assetsPath}hero-bio.jpg", 0.5);
   align-items: center;
 
   display: flex;
@@ -145,6 +141,8 @@ $assetsPath :"../assets/Images";
 }
 
 .gallery {
+  @include generate-images(9);
+
   display: grid;
   grid-template-columns: repeat(3,1fr);
 
