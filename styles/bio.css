@@ -1,32 +1,32 @@
 @font-face {
   font-family: "Avenir";
   font-weight: 400;
-  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
+  src: url(../../assets/Font/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
   font-family: "Avenir";
   font-weight: 600;
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf");
+  src: url(../../assets/Font/AvenirNextLTPro-Demi.otf);
 }
 @font-face {
   font-family: "Avenir";
   font-weight: 700;
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
+  src: url(../../assets/Font/AvenirNextLTPro-/Bold.otf);
 }
 @font-face {
   font-family: "Avenir";
   font-weight: 400;
-  src: url("../../assets/Font/Alternative files/AvenirNextLTPro.ttf");
+  src: url(../../assets/Font/Alternative%20files/AvenirNextLTPro.ttf);
 }
 @font-face {
   font-family: "Avenir";
   font-weight: 600;
-  src: url("../../assets/Font/Alternative files/AvenirNextLTProDemi.ttf");
+  src: url(../../assets/Font/Alternative%20files/AvenirNextLTProDemi.ttf);
 }
 @font-face {
   font-family: "Avenir";
   font-weight: 700;
-  src: url("../../assets/Font/Alternative files/AvenirNextLTProBold.ttf");
+  src: url(../../assets/Font/Alternative%20files/AvenirNextLTProBold.ttf);
 }
 /*
 $divider: (
@@ -187,6 +187,33 @@ $divider: (
     width: math.div($i*100,$columns);
   }*/
 }
+.gallery img.photo-gallery-1 {
+  content: url("../assets/Images/Photo-gallery-1.jpg");
+}
+.gallery img.photo-gallery-2 {
+  content: url("../assets/Images/Photo-gallery-2.jpg");
+}
+.gallery img.photo-gallery-3 {
+  content: url("../assets/Images/Photo-gallery-3.jpg");
+}
+.gallery img.photo-gallery-4 {
+  content: url("../assets/Images/Photo-gallery-4.jpg");
+}
+.gallery img.photo-gallery-5 {
+  content: url("../assets/Images/Photo-gallery-5.jpg");
+}
+.gallery img.photo-gallery-6 {
+  content: url("../assets/Images/Photo-gallery-6.jpg");
+}
+.gallery img.photo-gallery-7 {
+  content: url("../assets/Images/Photo-gallery-7.jpg");
+}
+.gallery img.photo-gallery-8 {
+  content: url("../assets/Images/Photo-gallery-8.jpg");
+}
+.gallery img.photo-gallery-9 {
+  content: url("../assets/Images/Photo-gallery-9.jpg");
+}
 .gallery img {
   width: 100%;
   height: auto;
@@ -220,6 +247,39 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
   text-decoration: none;
 }
 
+.address td {
+  background-color: pink;
+}
+
+.footer__contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 767px) {
+  .footer__contact {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.footer__bandsite {
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .footer__bandsite {
+    text-align: left;
+    order: 1;
+  }
+}
+.footer__social img {
+  margin-right: 1rem;
+}
+@media only screen and (max-width: 767px) {
+  .footer__social img {
+    text-align: left;
+    order: 1;
+  }
+}
 .footer__container {
   display: table;
   width: 100%;
@@ -254,36 +314,6 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
   }
   .footer__container--bandsite {
     text-align: left;
-  }
-}
-
-.footer__contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-@media only screen and (max-width: 767px) {
-  .footer__contact {
-    flex-direction: column;
-    align-items: start;
-  }
-}
-.footer__bandsite {
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
-  .footer__bandsite {
-    text-align: left;
-    order: 1;
-  }
-}
-.footer__social img {
-  margin-right: 1rem;
-}
-@media only screen and (max-width: 767px) {
-  .footer__social img {
-    text-align: left;
-    order: 1;
   }
 }
 
