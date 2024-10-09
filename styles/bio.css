@@ -220,6 +220,39 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
   text-decoration: none;
 }
 
+.address td {
+  background-color: pink;
+}
+
+.footer__contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 767px) {
+  .footer__contact {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.footer__bandsite {
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  .footer__bandsite {
+    text-align: left;
+    order: 1;
+  }
+}
+.footer__social img {
+  margin-right: 1rem;
+}
+@media only screen and (max-width: 767px) {
+  .footer__social img {
+    text-align: left;
+    order: 1;
+  }
+}
 .footer__container {
   display: table;
   width: 100%;
@@ -254,36 +287,6 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
   }
   .footer__container--bandsite {
     text-align: left;
-  }
-}
-
-.footer__contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-@media only screen and (max-width: 767px) {
-  .footer__contact {
-    flex-direction: column;
-    align-items: start;
-  }
-}
-.footer__bandsite {
-  text-align: left;
-}
-@media only screen and (max-width: 767px) {
-  .footer__bandsite {
-    text-align: left;
-    order: 1;
-  }
-}
-.footer__social img {
-  margin-right: 1rem;
-}
-@media only screen and (max-width: 767px) {
-  .footer__social img {
-    text-align: left;
-    order: 1;
   }
 }
 
