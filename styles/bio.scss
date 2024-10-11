@@ -1,6 +1,20 @@
+@use "partials/variables" as *;
 @use "partials/global" as *;
+@use "partials/mixins" as *;
 
-*{
-  padding: 0;
-  margin: 0;
+.hero{
+  @include background-opacity("#{$assetsPath}hero-bio.jpg", 0.5);
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__title h1{
+    @include font-styles("sec-header", "default");
+    font-size:60px;
+    font-weight: 600;
+
+    @include mobile{
+      font-size: 24px;
+    }
+  }
 }

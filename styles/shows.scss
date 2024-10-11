@@ -1,6 +1,89 @@
+@use "partials/variables" as *;
 @use "partials/global" as *;
+@use "partials/mixins" as *;
 
-*{
-  padding: 0;
-  margin: 0;
+.hero{
+  @include background-opacity("#{$assetsPath}hero-shows.jpg", 0.5);
+
+  align-items: center;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__title{
+    width: 50%;
+  }
+  &__song{
+    width: 50%;
+
+    .audio-player {
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+    }
+
+  }
+
+  h1{
+    @include font-styles("sec-header", "default");
+    font-size:60px;
+    font-weight: 600;
+
+    @include mobile{
+      font-size: 24px;
+    }
+  }
+
 }
+
+.concert{
+  display: flex;
+  border-style: dashed;
+
+  &__subheader{
+    width: 40%;
+
+  }
+  &__view {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__card {
+
+    @include desktop {
+      display: none;
+    }
+
+    &--item {
+      border: 1px solid #ccc;
+    }
+  }
+
+  &__table {
+    display: none;
+
+    @include desktop {
+      display: table;
+      width: 100%;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+
+    th, td {
+      text-align: left;
+      border: 1px solid pink;
+    }
+  }
+}
+
+
+
+

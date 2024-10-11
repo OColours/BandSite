@@ -1,4 +1,4 @@
-// 函数来创建图像元素
+//Load gallery
 function createImageElements(count) {
     const gallery = document.getElementById('photo-gallery');
     gallery.innerHTML = '';
@@ -11,4 +11,8 @@ function createImageElements(count) {
     }
 }
 
-createImageElements(9);
+//execute function after complete page load
+document.addEventListener('DOMContentLoaded', function() {
+    createImageElements(9);
+
+});
