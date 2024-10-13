@@ -1,38 +1,38 @@
 $fontPath:"../../assets/Font/AvenirNextLTPro-";
-$AlterfontPath:"../../assets/Font/Alternative%20files/AvenirNextLTPro";
+$AlterfontPath:"../../assets/Font/Alternative files/AvenirNextLTPro";
 
 @font-face {
   font-family:'Avenir';
   font-weight: 400;
-  src: url(#{$fontPath}Regular.otf);
+  src: url("#{$fontPath}Regular.otf");
 }
 
 @font-face {
   font-family:'Avenir';
   font-weight: 600;
-  src: url(#{$fontPath}Demi.otf);
+  src: url("#{$fontPath}Demi.otf");
 }
 
 @font-face {
   font-family:'Avenir';
   font-weight: 700;
-  src: url(#{$fontPath}/Bold.otf);
+  src: url("#{$fontPath}/Bold.otf");
 }
 
 @font-face {
   font-family:'Avenir';
   font-weight: 400;
-  src: url(#{$AlterfontPath}.ttf);
+  src: url("#{$AlterfontPath}.ttf");
 }
 
 @font-face {
   font-family:'Avenir';
   font-weight: 600;
-  src: url(#{$AlterfontPath}Demi.ttf);
+  src: url("#{$AlterfontPath}Demi.ttf");
 }
 
 @font-face {
   font-family:'Avenir';
   font-weight: 700;
-  src: url(#{$AlterfontPath}Bold.ttf);
+  src: url("#{$AlterfontPath}Bold.ttf");
 }
