@@ -34,6 +34,11 @@ $divider: (
         'fill-color': map-get($colors, 'mercury')
 );
 */
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .about__band {
   display: flex;
   flex-direction: column;
@@ -99,6 +104,7 @@ $divider: (
   border-bottom: 5px solid #323232;
   box-sizing: border-box;
   text-align: center;
+  min-width: 100px;
 }
 .nav ul li:hover {
   border-bottom: 5px solid #E1E1E1;
@@ -125,39 +131,7 @@ $divider: (
   }
 }
 
-.hero {
-  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/Images/hero-bio.jpg") no-repeat center center/cover;
-  height: 100vh;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-}
-@media only screen and (min-width: 1280px) {
-  .hero {
-    height: 100vh;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .hero {
-    max-height: 30vh;
-  }
-}
-.hero__title h1 {
-  font-family: "Avenir";
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 44px;
-  font-size: 60px;
-  font-weight: 600;
-}
-@media only screen and (max-width: 767px) {
-  .hero__title h1 {
-    font-size: 24px;
-  }
-}
-
 .container {
-  box-sizing: border-box;
   padding-left: 2.25rem;
   padding-right: 2.25rem;
 }
@@ -399,6 +373,7 @@ header, footer {
 }
 
 .labels {
+  color: #AFAFAF;
   font-family: "Avenir";
   font-weight: 700;
   font-size: 12px;
@@ -412,21 +387,161 @@ header, footer {
 }
 
 .buttons {
+  height: 40px;
+  border-radius: 4px;
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 0 32px;
+  min-width: 150px;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
   font-family: "Avenir";
   font-weight: 700;
   font-size: 12px;
   line-height: 20px;
 }
+.buttons:hover {
+  background-color: #000000;
+}
 @media only screen and (max-width: 767px) {
   .buttons {
     font-size: 10px;
     line-height: 20px;
+    width: 100%;
   }
 }
 
-* {
-  padding: 0;
-  margin: 0;
+.avatar, .comments-feed .comments__feed-avatar {
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  display: inline-block;
+  object-fit: cover;
+  margin: 1rem;
+  width: 48px;
+  height: 48px;
+}
+.avatar img, .comments-feed .comments__feed-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 767px) {
+  .avatar, .comments-feed .comments__feed-avatar {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.hero {
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/Images/hero-bio.jpg") no-repeat center center/cover;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 1280px) {
+  .hero {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hero {
+    max-height: 50vh;
+  }
+}
+.hero__title h1 {
+  font-family: "Avenir";
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  font-size: 60px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 767px) {
+  .hero__title h1 {
+    font-size: 24px;
+  }
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 767px) {
+  .comments {
+    width: 100%;
+  }
+}
+.comments__form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+.comments__form .comment-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 767px) {
+  .comments__form .comment-form {
+    width: 100%;
+  }
+}
+.comments__form .comment-form .comment-info {
+  display: flex;
+  flex-direction: column;
+}
+.comments__form .comment-form .comment-info .comment-buttons {
+  align-self: flex-end;
+}
+.comments__form .comment-form .comment-info input,
+.comments__form .comment-form .comment-info textarea {
+  width: 100%;
+  border-radius: 4px;
+  padding-bottom: 1rem;
+  height: 3rem;
+  border: 1px solid #E1E1E1;
+}
+.comments__form .comment-form .comment-info input:focus,
+.comments__form .comment-form .comment-info textarea:focus {
+  border-color: #323232;
+  outline: none;
+}
+.comments__form .comment-form .comment-info input.error,
+.comments__form .comment-form .comment-info textarea.error {
+  border-color: #D22D2D;
+}
+
+.comments-feed {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #E1E1E1;
+  justify-content: space-between;
+}
+.comments-feed .comments__feed-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.comments-feed .comments__feed-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+}
+.comments-feed .comments__feed-content .comments__feed-authorDate {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /*# sourceMappingURL=bio.css.map */

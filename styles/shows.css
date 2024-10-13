@@ -33,7 +33,12 @@ $divider: (
         'stroke-width': 1px,
         'fill-color': map-get($colors, 'mercury')
 );
-*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .about__band {
   display: flex;
   flex-direction: column;
@@ -99,6 +104,7 @@ $divider: (
   border-bottom: 5px solid #323232;
   box-sizing: border-box;
   text-align: center;
+  min-width: 100px;
 }
 .nav ul li:hover {
   border-bottom: 5px solid #E1E1E1;
@@ -399,6 +405,7 @@ header, footer {
 }
 
 .labels {
+  color: #AFAFAF;
   font-family: "Avenir";
   font-weight: 700;
   font-size: 12px;
@@ -412,15 +419,160 @@ header, footer {
 }
 
 .buttons {
+  height: 40px;
+  border-radius: 4px;
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 0 32px;
+  min-width: 150px;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
   font-family: "Avenir";
   font-weight: 700;
   font-size: 12px;
   line-height: 20px;
 }
+
+.buttons:hover {
+  background-color: #000000;
+}
+
 @media only screen and (max-width: 767px) {
   .buttons {
     font-size: 10px;
     line-height: 20px;
+    width: 100%;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  display: inline-block;
+  object-fit: cover;
+  margin: 1rem;
+  width: 48px;
+  height: 48px;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 767px) {
+  .avatar {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.hero {
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/Images/hero-shows.jpg") no-repeat center center/cover;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1280px) {
+  .hero {
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hero {
+    max-height: 50vh;
+  }
+}
+
+.concert {
+  display: flex;
+}
+@media only screen and (max-width: 767px) {
+  .concert {
+    flex-direction: column;
+  }
+}
+.concert__subheader {
+  width: 25%;
+}
+.concert__subheader h1 {
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .concert__subheader {
+    width: 100%;
+  }
+}
+.concert__view {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+@media only screen and (max-width: 767px) {
+  .concert__view {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+.concert__card {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .concert__card {
+    display: block;
+  }
+}
+.concert__card--item {
+  border-bottom: 1px solid #E1E1E1;
+}
+@media only screen and (max-width: 767px) {
+  .concert__card--item {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.concert__table {
+  display: table;
+}
+@media only screen and (max-width: 767px) {
+  .concert__table {
+    display: none;
+  }
+}
+.concert table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.concert table td, .concert table th {
+  text-align: left;
+  padding: 2.25rem;
+}
+@media only screen and (max-width: 767px) {
+  .concert table td, .concert table th {
+    padding: 1rem;
+  }
+}
+.concert table tbody tr.selected {
+  background-color: #E1E1E1;
+}
+.concert table tbody tr:hover {
+  background-color: #FAFAFA;
+}
+.concert table tbody tr td {
+  border-bottom: 1px solid #E1E1E1;
+}
+.concert table th {
+  padding-top: 3rem;
+  padding-bottom: 2.25rem;
+}
+@media only screen and (max-width: 767px) {
+  .concert table th {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
   }
 }
 

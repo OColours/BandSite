@@ -1,6 +1,113 @@
+@use "partials/variables" as *;
 @use "partials/global" as *;
+@use "partials/mixins" as *;
 
-*{
-  padding: 0;
-  margin: 0;
+.hero{
+  @include background-opacity("#{$assetsPath}hero-shows.jpg", 0.5);
+
+  align-items: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
 }
+
+.concert {
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__subheader {
+    width: 25%;
+
+    h1 {
+      width: 100%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__view {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__card {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+
+    &--item {
+      border-bottom: 1px solid map-get($colors,'mercury');
+
+      @include mobile {
+        padding-bottom: $base-rem;
+        margin-bottom: $base-rem;
+      }
+    }
+  }
+
+  &__table {
+    display: table;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td,th{
+      text-align: left;
+      padding: $base-rem * 2.25;
+
+      @include mobile {
+        padding: $base-rem * 1;
+      }
+    }
+
+    tbody {
+      tr {
+        &.selected {
+          background-color: map-get($colors, 'mercury');
+        }
+
+        &:hover {
+          background-color: map-get($colors, 'alabaster');
+        }
+
+        td {
+          border-bottom: 1px solid map-get($colors,'mercury');
+
+        }
+      }
+    }
+
+    th {
+      @include header-padding("default");
+
+      @include mobile {
+        @include header-padding("mobile");
+      }
+    }
+  }
+}
+
+
+
+
