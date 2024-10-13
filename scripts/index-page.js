@@ -38,13 +38,11 @@ const commentsFeed = document.getElementById('comments-feed');
 
 function createCommentCard(comment) {
     const commentElement = document.createElement('article');
-    commentElement.classList.add('comment');
+    commentElement.classList.add('comments-feed');
 
-    const avatarSection = document.createElement('section');
+    const avatarSection = document.createElement('label');
     avatarSection.classList.add('comments__feed-avatar');
-    const avatarPlaceholder = document.createElement('div');
-    avatarPlaceholder.classList.add('avatar-placeholder');
-    avatarSection.appendChild(avatarPlaceholder);
+    avatarSection.innerText = comment.author.charAt(0).toUpperCase();
 
     const contentSection = document.createElement('section');
     contentSection.classList.add('comments__feed-content');
@@ -52,16 +50,21 @@ function createCommentCard(comment) {
     const authorDateContainer = document.createElement('div');
     authorDateContainer.classList.add('comments__feed-authorDate');
 
-    const authorTxt = document.createElement('p');
-    authorTxt.innerText = comment.author;
+    const spanTxt = document.createElement('span');
+    spanTxt.classList.add('body');
+    const strong = document.createElement('strong');
+    strong.innerText = comment.author;
+    spanTxt.appendChild(strong);
 
-    const dateDT = document.createElement('p');
+    const dateDT = document.createElement('label');
+    dateDT.classList.add('body');
     dateDT.innerText = comment.date;
 
-    authorDateContainer.appendChild(authorTxt);
+    authorDateContainer.appendChild(spanTxt);
     authorDateContainer.appendChild(dateDT);
 
     const contentTxt = document.createElement('p');
+    contentTxt.classList.add('body');
     contentTxt.innerText = comment.content;
 
     contentSection.appendChild(authorDateContainer);
@@ -82,24 +85,41 @@ function renderCommentCard() {
     });
 }
 
+
+
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    const nameInput = event.target.fullName.value;
-    const commentInput = event.target.comment.value;
+    const nameInput = event.target.fullName;
+    const commentInput = event.target.comment;
 
     const newComment = {
-        author: nameInput,
+        author: nameInput.value,
         date: new Date().toLocaleDateString(),
-        content: commentInput
+        content: commentInput.value
     };
 
-    comments.push(newComment);
+    comments.unshift(newComment);
     renderCommentCard();
 
     nameInput.value = '';
     commentInput.value = '';
 }
+
+function validateNameInput(event) {
+    const nameInput = event.target;
+    const regex = /^[A-Za-z\s]*$/;
+
+    if (!regex.test(nameInput.value)) {
+        alert("Invalid name");
+        nameInput.classList.add('error');
+        return;
+    } else {
+        nameInput.classList.remove('error');
+    }
+}
+
+document.querySelector('input[name="fullName"]').addEventListener('input', validateNameInput);
 
 commentForm.addEventListener('submit', handleFormSubmit);
 renderCommentCard();
