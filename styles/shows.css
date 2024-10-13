@@ -33,7 +33,7 @@ $divider: (
         'stroke-width': 1px,
         'fill-color': map-get($colors, 'mercury')
 );
-
+*/
 * {
   padding: 0;
   margin: 0;
@@ -131,39 +131,7 @@ $divider: (
   }
 }
 
-.hero {
-  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/Images/hero-bio.jpg") no-repeat center center/cover;
-  height: 100vh;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-}
-@media only screen and (min-width: 1280px) {
-  .hero {
-    height: 100vh;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .hero {
-    max-height: 30vh;
-  }
-}
-.hero__title h1 {
-  font-family: "Avenir";
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 44px;
-  font-size: 60px;
-  font-weight: 600;
-}
-@media only screen and (max-width: 767px) {
-  .hero__title h1 {
-    font-size: 24px;
-  }
-}
-
 .container {
-  box-sizing: border-box;
   padding-left: 2.25rem;
   padding-right: 2.25rem;
 }
@@ -433,11 +401,9 @@ header, footer {
   font-size: 12px;
   line-height: 20px;
 }
-
 .buttons:hover {
   background-color: #000000;
 }
-
 @media only screen and (max-width: 767px) {
   .buttons {
     font-size: 10px;
@@ -573,12 +539,6 @@ header, footer {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
   }
-  }
-}
-
-* {
-  padding: 0;
-  margin: 0;
 }
 
 /*# sourceMappingURL=shows.css.map */
