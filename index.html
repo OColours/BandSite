@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>BandSite</title>
     <link rel="stylesheet" href="styles/bio.css">
-    <script src="./scripts/index-page.js"></script>
+    <script src="./scripts/index-page.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -64,6 +64,27 @@
         <h2 class="bg-light section-header">Photo Gallery</h2>
         <div class="row gallery" id="photo-gallery"></div>
     </section>
+    <section class="comments">
+        <div class="comment__form">
+            <h1 class="section-header">Join the Conversation</h1>
+            <form id="comment-form" class="comment-form">
+                <section class="comment-avater">
+                    <img src="./assets/Images/Mohan-muruge.jpg" alt="Avatar">
+                </section>
+                <section class="comment-info">
+                    <label class="labels">NAME</label>
+                    <input name="fullName" type="text" placeholder="Enter your name" required/>
+                    <label class="labels">COMMENT</label>
+                    <textarea  name="comment" type="text" placeholder="Enter your comment" required></textarea>
+                </section>
+                <button type="submit" class="comment-buttons">COMMENT</button>
+            </form>
+        </div>
+        <div class="comments__display">
+            <div id="comments-feed"></div>
+        </div>
+    </section>
+
 </main>
 
 <footer>
