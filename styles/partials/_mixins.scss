@@ -1,6 +1,4 @@
 @use "variables" as *;
-@use "sass:math";
-
 
 //Type kit
 @mixin font-styles($type,$device: "default") {
@@ -23,16 +21,9 @@
 //Layout Grid
 
 @mixin layout-grid($device: "desktop") {
-  //$columns: map-get(map-get($grids, "columns"), $device);
   $gutter: map-get(map-get($grids, "gutters"), $device);
-  //$margin: map-get(map-get($grids, "margins"), $device);
 
   gap: $gutter;
-  /*
-  &__item{
-    @for $i from 1 throught $columns{
-    width: math.div($i*100,$columns);
-  }*/
 }
 
 
@@ -62,8 +53,8 @@
   url($image-url) no-repeat center center / cover;
   height: 100vh;
 
-  @include desktop{
-    height: 100vh;
+  @include tablet{
+    max-height: 75vh;
   }
 
   @include mobile{
