@@ -480,7 +480,9 @@ header, footer {
 .concert__view {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 @media only screen and (max-width: 767px) {
   .concert__view {

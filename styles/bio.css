@@ -323,14 +323,14 @@ header, footer {
   }
 }
 
-.subheader {
+.subheader, .comments-feed .comments__feed-avatar {
   font-family: "Avenir";
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
 }
 @media only screen and (max-width: 767px) {
-  .subheader {
+  .subheader, .comments-feed .comments__feed-avatar {
     font-size: 14px;
     line-height: 22px;
   }
@@ -406,8 +406,7 @@ header, footer {
   border-radius: 50%;
   background-color: #E1E1E1;
   display: inline-block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin: 1rem;
   width: 48px;
   height: 48px;
@@ -495,8 +494,9 @@ header, footer {
   width: 100%;
   border-radius: 4px;
   padding-bottom: 1rem;
-  height: 3rem;
+  height: 100%;
   border: 1px solid #E1E1E1;
+  resize: none;
 }
 .comments__form .comment-form .comment-info input:focus,
 .comments__form .comment-form .comment-info textarea:focus {
@@ -533,4 +533,6 @@ header, footer {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}/*# sourceMappingURL=bio.css.map */
+}
+
+/*# sourceMappingURL=bio.css.map */

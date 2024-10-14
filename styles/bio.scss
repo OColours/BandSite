@@ -57,8 +57,9 @@
           width: 100%;
           border-radius: 4px;
           padding-bottom: $base-rem;
-          height: $base-rem * 3;
+          height: 100%;
           border: 1px solid map-get($colors,'mercury');
+          resize: none;
 
           &:focus {
             border-color: $primary;
@@ -85,6 +86,7 @@
 
   .comments__feed-avatar {
     @extend .avatar;
+    @extend .subheader;
     display: flex;
     align-items: center;
     justify-content: center;
