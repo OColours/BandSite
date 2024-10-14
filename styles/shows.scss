@@ -53,7 +53,9 @@
   &__view {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
+    padding-bottom: $base-rem;
+    margin-bottom: $base-rem;
 
     @include mobile {
       width: 100%;

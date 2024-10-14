@@ -105,7 +105,7 @@ function BuyTickethandler(concert) {
         })
         .then(statusCodeString => {
             console.log("Fetch concert data:\n", concert);
-            console.log('%c ', `padding: 100px; background: url(${statusCodeString}); background-size: contain;`);
+            console.log('%c ', `padding: 100px; background: url(${statusCodeString}) no-repeat; background-size: contain;`);
         })
         .catch(error => {
             console.error('Error loading the Base64 image:', error);
