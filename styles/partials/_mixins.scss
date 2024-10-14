@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "sass:math";
 
+
 //Type kit
 @mixin font-styles($type,$device: "default") {
   font-family: map-get(map-get($font-styles, "font-family"), $device);
@@ -66,6 +67,15 @@
   }
 
   @include mobile{
-    max-height: 30vh;
+    max-height: 50vh;
+  }
+}
+
+//generate gallery images
+@mixin generate-images($count) {
+  @for $i from 1 through $count {
+    img.photo-gallery-#{$i} {
+      content: url('#{$assetsPath}Photo-gallery-#{$i}.jpg');
+    }
   }
 }

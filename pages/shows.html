@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shows</title>
+    <link rel="stylesheet" href="../styles/shows.css">
+    <script src="../scripts/build-shows-page.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="nav">
+            <a class="" href="../index.html">
+                <img src="../assets/Logo/Logo-bandsite.svg" alt="bandsite logo">
+            </a>
+            <ul>
+                <li><a class="body" href="../index.html">Biography</a></li>
+                <li><a class="body" href="#">Shows</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="container hero">
+        <div class="hero__title">
+            <h3 class="bg-dark section-header row">Beautiful Beasts Album</h3>
+            <h1 class="bg-dark page-header">Stripes of Yellow x For The Stings</h1>
+        </div>
+        <div class="hero__song">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/535872399&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div><a href="https://soundcloud.com/momomoyouth" title="MØ" target="_blank" style="color: #cccccc; text-decoration: none;"></a>
+        </div>
+    </section>
+    <section class="container">
+        <div class="concert">
+            <div class="concert__subheader">
+                <h1 class="bg-light section-header">Shows</h1>
+            </div>
+            <div class="concert__view">
+                <div class="concert__table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th class="labels">Date</th>
+                            <th class="labels">Venue</th>
+                            <th class="labels">Location</th>
+                        </tr>
+                        </thead>
+                        <tbody id="concertTable" class="body"></tbody>
+                    </table>
+                </div>
+                <div class="concert__card" id="concertCards"></div>
+            </div>
+        </div>
+        </section>
+</main>
+</body>
+<footer>
+    <div class="container">
+
+        <table class="footer__container">
+            <tr>
+                <td class="footer__container--left">
+                    <table>
+                        <tr>
+                            <td><h2 class="bg-dark section-header">Get In Touch</h2></td>
+                            <td><div class="footer__social section-header">
+                                <a href="https://www.instagram.com" target="_blank">
+                                    <img src="../assets/Icons/SVG/Icon-instagram.svg" alt="Instagram">
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <img src="../assets/Icons/SVG/Icon-facebook.svg" alt="Facebook">
+                                </a>
+                                <a href="https://www.twitter.com" target="_blank">
+                                    <img src="../assets/Icons/SVG/Icon-twitter.svg" alt="Twitter">
+                                </a>
+                            </div></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><div class="address">
+                                <h4 class="row bg-dark footer">Cam Adams<br>The Bees Knees Management</h4>
+                                <h4 class="row bg-dark footer">503 Broadway Penthouse<br>New York, NY 10012, USA</h4>
+                                <h4 class="row"><a class="bg-dark footer" href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></h4>
+                            </div></td>
+                            <td><div class="address">
+                                <h4 class="row bg-dark footer">Pearl Gregg<br>Limitless Artist Group</h4>
+                                <h4 class="row bg-dark footer">Booking Agent for<br>US / South America / Japan</h4>
+                                <h4 class="row"><a class="bg-dark footer" href="mailto:ibookings@limitlessag.com">ibookings@limitlessag.com</a></h4>
+                            </div></td>
+                            <td><div class="address">
+                                <h4 class="row bg-dark footer">Carson Whyte<br>ARCH Entertainment</h4>
+                                <h4 class="row bg-dark footer">Booking Agent for<br>UK / EU / AU</h4>
+                                <h4 class="row"><a class="bg-dark footer" href="mailto:ibookings@archentertainment.com">ibookings@archentertainment.com</a></h4>
+                            </div></td>
+                        </tr>
+                    </table>
+                </td>
+                <td  class="footer__container--right">
+                    <table>
+                        <tr>
+                            <td class="footer__container--bandsite section-header"><a class="row" href="./index.html">
+                                <img src="../assets/Logo/Logo-bandsite.svg" alt="bandsite logo">
+                            </a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <div class="footer__copyright">
+            <p class="row bg-dark footer">Copyright The Bees Knees &#169; 2023 All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+</html>

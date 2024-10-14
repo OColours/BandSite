@@ -1,6 +1,106 @@
+@use "partials/variables" as *;
 @use "partials/global" as *;
+@use "partials/mixins" as *;
 
-*{
-  padding: 0;
-  margin: 0;
+.hero{
+  @include background-opacity("#{$assetsPath}hero-bio.jpg", 0.5);
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__title h1{
+    @include font-styles("sec-header", "default");
+    font-size:60px;
+    font-weight: 600;
+
+    @include mobile{
+      font-size: 24px;
+    }
+  }
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+
+  @include mobile{
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: $base-rem;
+    border-bottom: 1px solid map-get($colors,'mercury');
+    .comment-form {
+      @include mobile{
+        width: 100%;
+      }
+
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+
+      .comment-info {
+        display: flex;
+        flex-direction: column;
+
+        .comment-buttons {
+          align-self: flex-end;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          border-radius: 4px;
+          padding-bottom: $base-rem;
+          height: $base-rem * 3;
+          border: 1px solid map-get($colors,'mercury');
+
+          &:focus {
+            border-color: $primary;
+            outline: none;
+          }
+
+          &.error {
+            border-color: $error;
+          }
+        }
+        }
+      }
+    }
+}
+
+.comments-feed {
+  padding-top: $base-rem;
+  padding-bottom: $base-rem;
+  margin-bottom: $base-rem;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid map-get($colors,'mercury');
+  justify-content: space-between;
+
+  .comments__feed-avatar {
+    @extend .avatar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .comments__feed-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+
+    .comments__feed-authorDate {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
 }

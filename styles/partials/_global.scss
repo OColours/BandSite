@@ -1,6 +1,12 @@
 @use "mixins" as *;
 @use "variables" as *;
 
+//Global
+*{
+  padding: 0;
+  margin: 0;
+}
+
 //Others
 .about {
   &__band {
@@ -72,6 +78,7 @@
       border-bottom: 5px solid $primary;
       box-sizing: border-box;
       text-align: center;
+      min-width: 100px;
 
       &:hover {
         color: map-get($colors,'Alabaster');
@@ -104,27 +111,7 @@
   }
 }
 
-.hero{
-  @include background-opacity("../assets/Images/hero-bio.jpg",0.5);
-  align-items: center;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  &__title h1{
-    @include font-styles("sec-header", "default");
-    font-size:60px;
-    font-weight: 600;
-
-    @include mobile{
-      font-size: 24px;
-    }
-  }
-}
-
 .container{
-  box-sizing: border-box;
-
   @include comp-padding("default");
 
   @include mobile {
@@ -141,6 +128,8 @@
 }
 
 .gallery {
+  @include generate-images(9);
+
   display: grid;
   grid-template-columns: repeat(3,1fr);
 
@@ -173,50 +162,9 @@ footer{
   }
 }
 
-.footer__container {
-  display: table;
-  width: 100%;
-
-  &--left {
-    display: table-cell;
-    width: 75%;
-  }
-
-  &--right {
-    display: table-cell;
-    width: 25%;
-    vertical-align: top;
-    text-align: right;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  @include mobile {
-    display: flex;
-    flex-direction: column;
-
-    tr {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    td {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    &--bandsite{
-      text-align: left;
-    }
-  }
-
+.address td{
+  background-color: pink;
 }
-
-
 
 .footer{
   &__contact{
@@ -244,6 +192,49 @@ footer{
       text-align: left;
       order: 1;
     }
+  }
+
+  &__container {
+    display: table;
+    width: 100%;
+
+    &--left {
+      display: table-cell;
+      width: 75%;
+    }
+
+    &--right {
+      display: table-cell;
+      width: 25%;
+      vertical-align: top;
+      text-align: right;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+
+      tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      &--bandsite{
+        text-align: left;
+      }
+    }
+
   }
 }
 
@@ -304,6 +295,7 @@ header, footer{
 }
 
 .labels {
+  color: $secondary;
   @include font-styles("labels", "default");
 
   @include mobile {
@@ -312,9 +304,46 @@ header, footer{
 }
 
 .buttons {
+    height: 40px;
+    border-radius: 4px;
+    background-color: $primary;
+    color: map-get($colors,'white');
+    padding: 0 32px;
+    min-width: 150px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: map-get($colors,'BandSite-darkblack');
+    }
+
   @include font-styles("buttons", "default");
 
   @include mobile {
     @include font-styles("buttons", "mobile");
+    width: 100%;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  background-color: map-get($colors,'mercury');
+  display: inline-block;
+  object-fit: cover;
+  margin: $base-rem;
+
+  width: 48px;
+  height: 48px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  @include mobile{
+    width: 38px;
+    height: 38px;
   }
 }

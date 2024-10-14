@@ -1,5 +1,7 @@
 @use "typography";
 
+$assetsPath :"../assets/Images/";
+
 // Type Kit
 $font-weights: (
         "regular": 400,
@@ -69,6 +71,7 @@ $font-styles: (
 // Color
 $primary: #323232;
 $secondary: #AFAFAF;
+$error:#D22D2D;
 
 $colors: (
         // PRIMARY COLORS
@@ -79,7 +82,10 @@ $colors: (
         // SECONDARY COLORS
         'BandSite-darkblack': #000000,
         'mercury': #E1E1E1,
-        'alabaster': #FAFAFA
+        'alabaster': #FAFAFA,
+
+        //Other
+        'error':$error
 );
 
 // Layout Grid
